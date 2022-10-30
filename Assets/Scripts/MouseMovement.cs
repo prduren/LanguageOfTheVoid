@@ -15,8 +15,8 @@ public class MouseMovement : MonoBehaviour
     private void Start()
     {
         // lock cursor to center of screen
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
     }
 
     // Update is called once per frame
