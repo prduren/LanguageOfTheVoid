@@ -11,6 +11,7 @@ public class Man : MonoBehaviour
     GameObject VoidHome;
     Vector3 originalPos;
     float distanceFromVoidHome;
+    float playerDistanceFromMan;
     bool manAttached = false;
 
     // Start is called before the first frame update
@@ -28,10 +29,10 @@ public class Man : MonoBehaviour
     {
 
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
-        // Debug.Log(distanceFromVoidHome);
+        playerDistanceFromMan = Vector3.Distance(originalPos, Player.transform.position);
 
         // grab the man
-        if (Input.GetKeyDown(KeyCode.V)) {
+        if ((Input.GetKeyDown(KeyCode.V)) & (playerDistanceFromMan < 3)) {
             manAttached = true;
         }
 
