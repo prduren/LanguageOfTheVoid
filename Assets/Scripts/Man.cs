@@ -9,10 +9,12 @@ public class Man : MonoBehaviour
     GameObject Man1;
     GameObject Man1Parent;
     GameObject VoidHome;
+    GameObject Void;
     Vector3 originalPos;
     float distanceFromVoidHome;
     float playerDistanceFromMan;
     bool manAttached = false;
+    float voidRotationsPerMinute = 200.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class Man : MonoBehaviour
         originalPos = new Vector3(26, 0, -5);
         Man1Parent = GameObject.Find("man1Parent");
         VoidHome = GameObject.Find("VoidHome");
+        Void = GameObject.Find("void");
     }
 
     // Update is called once per frame
@@ -31,7 +34,7 @@ public class Man : MonoBehaviour
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
         playerDistanceFromMan = Vector3.Distance(originalPos, Player.transform.position);
 
-        // grab the man
+        // grab the man if Player is close enough
         if ((Input.GetKeyDown(KeyCode.V)) & (playerDistanceFromMan < 3)) {
             manAttached = true;
         }
@@ -53,7 +56,15 @@ public class Man : MonoBehaviour
         // if man is close enough to VoidHome then end level
         if (distanceFromVoidHome < 3) {
             Debug.Log("end level");
+            InitVoid();
+            Vector3 vec = new Vector3(0, 0, 0);
+            Man1.transform.localScale = vec;
         }
+    }
+
+    void InitVoid() {
+        Void.GetComponent<SpriteRenderer>().enabled = true;
+        Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
     }
 
 }
