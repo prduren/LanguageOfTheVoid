@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     void Start () {
+        Cursor.lockState = CursorLockMode.Locked;
         rb.freezeRotation = true;
         rb = GetComponent<Rigidbody>();
     }
