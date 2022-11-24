@@ -15,6 +15,9 @@ public class Man : MonoBehaviour
     float playerDistanceFromMan;
     bool manAttached = false;
     float voidRotationsPerMinute = 200.0f;
+    // for demo only
+    GameObject[] demoObjects;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class Man : MonoBehaviour
         Man1Parent = GameObject.Find("man1Parent");
         VoidHome = GameObject.Find("VoidHome");
         Void = GameObject.Find("void");
+        // for demo only
+        demoObjects = GameObject.FindGameObjectsWithTag("demo");
     }
 
     // Update is called once per frame
@@ -55,7 +60,6 @@ public class Man : MonoBehaviour
 
         // if man is close enough to VoidHome then end level
         if (distanceFromVoidHome < 3) {
-            Debug.Log("end level");
             InitVoid();
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
@@ -63,8 +67,20 @@ public class Man : MonoBehaviour
     }
 
     void InitVoid() {
-        Void.GetComponent<SpriteRenderer>().enabled = true;
-        Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
+        // Void.GetComponent<SpriteRenderer>().enabled = true;
+        // Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
+
+        //for demo only:
+        foreach (GameObject i in demoObjects) {
+            
+            if(i.GetComponent<MeshRenderer>() != null) {
+                i.GetComponent<MeshRenderer>().enabled = true;
+            }
+            
+            if(i.GetComponent<Light>() != null) {
+                i.GetComponent<Light>().enabled = true;
+            }
+        }
     }
 
 }

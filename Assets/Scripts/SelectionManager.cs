@@ -7,8 +7,9 @@ public class SelectionManager : MonoBehaviour
     // Start is called before the first frame update
 
     GameObject Note;
-    public GameObject noteUI;
     public static bool NoteIsOpen = false;
+    public GameObject noteUI;
+    
 
     void Start()
     {
@@ -30,9 +31,6 @@ public class SelectionManager : MonoBehaviour
                     OpenNote();
                 }
             }
-        }
-        else {
-            Debug.Log("not hit");
         }
     }
 
