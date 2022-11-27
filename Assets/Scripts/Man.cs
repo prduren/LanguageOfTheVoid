@@ -29,7 +29,7 @@ public class Man : MonoBehaviour
         VoidHome = GameObject.Find("VoidHome");
         Void = GameObject.Find("void");
         // for demo only
-        demoObjects = GameObject.FindGameObjectsWithTag("demo");
+        // demoObjects = GameObject.FindGameObjectsWithTag("demo");
     }
 
     // Update is called once per frame
@@ -67,20 +67,8 @@ public class Man : MonoBehaviour
     }
 
     void InitVoid() {
-        // Void.GetComponent<SpriteRenderer>().enabled = true;
-        // Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
-
-        //for demo only:
-        foreach (GameObject i in demoObjects) {
-            
-            if(i.GetComponent<MeshRenderer>() != null) {
-                i.GetComponent<MeshRenderer>().enabled = true;
-            }
-            
-            if(i.GetComponent<Light>() != null) {
-                i.GetComponent<Light>().enabled = true;
-            }
-        }
+        Void.GetComponent<SpriteRenderer>().enabled = true;
+        Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
     }
 
 }
