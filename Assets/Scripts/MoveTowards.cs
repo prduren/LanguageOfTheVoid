@@ -42,7 +42,6 @@ public class MoveTowards : MonoBehaviour
     void OpenDoor() {
         var step =  speed * Time.deltaTime; // calculate distance to move
         shojiDoorLeft.transform.position = Vector3.MoveTowards(shojiDoorLeft.transform.position, target, step); 
-        Debug.Log("doorPos:" + shojiDoorLeft.transform.position + "targetPos:" + target);
     }
 
 }

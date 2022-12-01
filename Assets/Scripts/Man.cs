@@ -28,8 +28,6 @@ public class Man : MonoBehaviour
         Man1Parent = GameObject.Find("man1Parent");
         VoidHome = GameObject.Find("VoidHome");
         Void = GameObject.Find("void");
-        // for demo only
-        // demoObjects = GameObject.FindGameObjectsWithTag("demo");
     }
 
     // Update is called once per frame
@@ -44,13 +42,13 @@ public class Man : MonoBehaviour
             manAttached = true;
         }
 
-
         // if grabbing man
         if (manAttached) {
             Man1.transform.SetParent(Player.transform);
+            Man1.transform.RotateAround(Player.transform.position, Vector3.up, 200f * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.C)) {
                 manAttached = false;
-        }
+            }
         // if not grabbing man / if let go of man
         }
         else if (!manAttached) {
