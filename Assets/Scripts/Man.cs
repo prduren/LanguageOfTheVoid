@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Man : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Man : MonoBehaviour
     bool manAttached = false;
     float voidRotationsPerMinute = 200.0f;
     bool InitVoidFlag = false;
-    
+    bool L2SceneActiveFlag = false;
+    string currentSceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +29,21 @@ public class Man : MonoBehaviour
         Man1Parent = GameObject.Find("man1Parent");
         VoidHome = GameObject.Find("VoidHome");
         Void = GameObject.Find("void");
+        Scene currentScene = SceneManager.GetActiveScene();
+        string currentSceneName = currentScene.name;
+        if (currentSceneName == "L2") {
+            L2SceneActiveFlag = true;
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(L2SceneActiveFlag);
+        if (L2SceneActiveFlag) {
+            Man1.transform.Rotate(0, 0, 1);
+        }
 
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
         playerDistanceFromMan = Vector3.Distance(originalPos, Player.transform.position);
@@ -66,6 +78,7 @@ public class Man : MonoBehaviour
         if (InitVoidFlag) {
             SpinVoid();
         }
+
 
     }
 
