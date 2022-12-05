@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     GameObject YesWatched;
     GameObject StartBox;
     Vector3 moveDirection;
+    string currentSceneName;
     public bool CanMove = false;
 
     void Start () {
@@ -20,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         YesWatched = GameObject.Find("YesWatched");
         StartBox = GameObject.Find("StartBox");
+        Scene currentScene = SceneManager.GetActiveScene();
+        string currentSceneName = currentScene.name;
+        if (currentSceneName != "L1") { 
+            CanMove = true;
+        }
     }
     // FixedUpdate called once a frame
     // Use FixedUpdate because Unity like it better for physics
@@ -34,7 +41,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
-        EnablePlayerMovement();
+        if (currentSceneName == "L1") {
+            EnablePlayerMovement();
+        }
     }
 
     private void MyInput() {
@@ -56,9 +65,6 @@ public class PlayerMovement : MonoBehaviour
                 CanMove = true;
                 StartBox.SetActive(false);
             }
-        }
-        else {
-            Debug.Log("no" + Input.mousePosition);
         }
     }
 

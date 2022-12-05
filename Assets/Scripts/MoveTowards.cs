@@ -1,22 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveTowards : MonoBehaviour
 {
 
     GameObject shojiDoorLeft;
-    AudioSource L1Music;
+    AudioSource LevelMusic;
     float speed = .5f;
     Vector3 target;
     bool moveDoorFlag = false;
+    string currentSceneName;
+
 
     // Start is called beforre the first frame update
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string currentSceneName = currentScene.name;
         shojiDoorLeft = GameObject.Find("shoji door left (real)");
-        L1Music = GameObject.Find("L1Music").GetComponent<AudioSource>();
+        if (currentSceneName == "L1") {
+            LevelMusic = GameObject.Find("L1Music").GetComponent<AudioSource>();
+        } else if (currentSceneName == "L2") {
+            LevelMusic = GameObject.Find("L2Music").GetComponent<AudioSource>();
+        }
         target = new Vector3(23.16f,-.17f,-6.2f);
+
     }
 
     // Update is called once per frame
@@ -29,7 +39,7 @@ public class MoveTowards : MonoBehaviour
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "shojiDoor") {
             if (Input.GetMouseButtonDown(0)) {
                 moveDoorFlag = true;
-                L1Music.Play();
+                LevelMusic.Play();
             }
         }
 

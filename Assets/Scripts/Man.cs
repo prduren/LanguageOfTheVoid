@@ -15,8 +15,7 @@ public class Man : MonoBehaviour
     float playerDistanceFromMan;
     bool manAttached = false;
     float voidRotationsPerMinute = 200.0f;
-    // for demo only
-    GameObject[] demoObjects;
+    bool InitVoidFlag = false;
     
 
     // Start is called before the first frame update
@@ -58,14 +57,19 @@ public class Man : MonoBehaviour
 
         // if man is close enough to VoidHome then end level
         if (distanceFromVoidHome < 3) {
-            InitVoid();
+            InitVoidFlag = true;
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
+            Void.GetComponent<SpriteRenderer>().enabled = true;
         }
+
+        if (InitVoidFlag) {
+            SpinVoid();
+        }
+
     }
 
-    void InitVoid() {
-        Void.GetComponent<SpriteRenderer>().enabled = true;
+    void SpinVoid() {
         Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
     }
 
