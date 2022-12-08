@@ -23,12 +23,13 @@ public class PlayerMovement : MonoBehaviour
         YesWatched = GameObject.Find("YesWatched");
         StartBox = GameObject.Find("StartBox");
         Scene currentScene = SceneManager.GetActiveScene();
-        string currentSceneName = currentScene.name;
+        currentSceneName = currentScene.name;
+        Debug.Log(currentSceneName);
         if (currentSceneName != "L1") { 
             CanMove = true;
         }
     }
-    // FixedUpdate called once a frame
+
     // Use FixedUpdate because Unity like it better for physics
     void FixedUpdate()
     
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update() {
-        if (currentSceneName == "L1") {
+        if (currentSceneName == "L1" ) {
             EnablePlayerMovement();
         }
     }
@@ -60,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     private void EnablePlayerMovement() {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // this assumes the mouse is at the center of the screen
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "YesWatched") {
             if (Input.GetMouseButtonDown(0)) {
                 CanMove = true;
