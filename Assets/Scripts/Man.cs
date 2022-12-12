@@ -40,9 +40,10 @@ public class Man : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(L2SceneActiveFlag);
+
+        //Spin man for L2
         if (L2SceneActiveFlag) {
-            Man1.transform.Rotate(0, 0, 1);
+            Man1.transform.Rotate(0, 0, .25f);
         }
 
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
@@ -59,12 +60,28 @@ public class Man : MonoBehaviour
             Man1.transform.RotateAround(Player.transform.position, Vector3.up, 200f * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.C)) {
                 manAttached = false;
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // this assumes the mouse is at the center of the screen
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit)) {
+                    Vector3 LerpByDistance(Vector3 A, Vector3 B, float x)
+                    {
+                        Vector3 P = x * Vector3.Normalize(B - A) + A;
+                        return P;
+                    }
+                    Man1.transform.position = LerpByDistance(Player.transform.position, Man1.transform.position, 2f);
+                    Man1.transform.SetParent(null);
+                }
             }
         // if not grabbing man / if let go of man
         }
         else if (!manAttached) {
-                Man1.transform.position = originalPos;
-                Man1.transform.SetParent(Man1Parent.transform);
+                // testing
+                
+                //
+
+                // Man1.transform.position = originalPos;
+                // Man1.transform.SetParent(Man1Parent.transform);
         }
 
         // if man is close enough to VoidHome then end level
