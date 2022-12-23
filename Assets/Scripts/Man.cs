@@ -47,7 +47,7 @@ public class Man : MonoBehaviour
         }
 
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
-        playerDistanceFromMan = Vector3.Distance(originalPos, Player.transform.position);
+        playerDistanceFromMan = Vector3.Distance(Man1.transform.position, Player.transform.position);
 
         // grab the man if Player is close enough
         if ((Input.GetKeyDown(KeyCode.V)) & (playerDistanceFromMan < 3)) {
@@ -56,8 +56,8 @@ public class Man : MonoBehaviour
 
         // if grabbing man
         if (manAttached) {
-            Man1.transform.SetParent(Player.transform);
-            Man1.transform.RotateAround(Player.transform.position, Vector3.up, 200f * Time.deltaTime);
+            Man1Parent.transform.SetParent(Player.transform);
+            Man1Parent.transform.RotateAround(Player.transform.position, Vector3.up, 200f * Time.deltaTime);
             if (Input.GetKeyDown(KeyCode.C)) {
                 manAttached = false;
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // this assumes the mouse is at the center of the screen
@@ -70,7 +70,7 @@ public class Man : MonoBehaviour
                         return P;
                     }
                     Man1.transform.position = LerpByDistance(Player.transform.position, Man1.transform.position, 2f);
-                    Man1.transform.SetParent(null);
+                    Man1Parent.transform.SetParent(null);
                 }
             }
         // if not grabbing man / if let go of man
