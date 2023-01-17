@@ -90,6 +90,7 @@ public class Man : MonoBehaviour
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
             Void.GetComponent<SpriteRenderer>().enabled = true;
+            SceneManager.LoadScene("L2");
         }
 
         if (InitVoidFlag) {
