@@ -50,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
     private void MyInput() {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        if (horizontalInput != 0) {
+            rb.drag = 12;
+        }
+        else {
+            rb.drag = 5;
+        }
     }
 
     private void MovePlayer() {
