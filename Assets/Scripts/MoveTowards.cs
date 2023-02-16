@@ -24,6 +24,8 @@ public class MoveTowards : MonoBehaviour
             LevelMusic = GameObject.Find("L1Music").GetComponent<AudioSource>();
         } else if (currentSceneName == "L2") {
             LevelMusic = GameObject.Find("L2Music").GetComponent<AudioSource>();
+        } else if (currentSceneName == "L3") {
+            LevelMusic = GameObject.Find("L2Music").GetComponent<AudioSource>();
         }
         target = new Vector3(23.16f,-.17f,-6.2f);
 
