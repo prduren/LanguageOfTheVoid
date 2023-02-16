@@ -31,7 +31,7 @@ public class SelectionManager : MonoBehaviour
                     OpenNote();
                 }
             }
-        }
+        } 
     }
 
     public void CloseNote() {
