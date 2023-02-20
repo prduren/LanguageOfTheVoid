@@ -49,6 +49,8 @@ public class Man : MonoBehaviour
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
         playerDistanceFromMan = Vector3.Distance(Man1.transform.position, Player.transform.position);
 
+        Debug.Log(playerDistanceFromMan);
+        
         // grab the man if Player is close enough
         if ((Input.GetKeyDown(KeyCode.V)) & (playerDistanceFromMan < 3)) {
             manAttached = true;

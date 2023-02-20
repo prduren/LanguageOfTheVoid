@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
         StartBox = GameObject.Find("StartBox");
         Scene currentScene = SceneManager.GetActiveScene();
         currentSceneName = currentScene.name;
-        Debug.Log(currentSceneName);
         if (currentSceneName != "L1") { 
             CanMove = true;
         }
