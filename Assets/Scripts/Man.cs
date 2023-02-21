@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class Man : MonoBehaviour
 {
 
+    bool endingInit;
+    public Material material1;
+    public Material material2;
+    float duration = 5.0f;
+    public Renderer rend;
+    float spawnEndingThingsCounter = 5f;
+    GameObject[] endingPeople;
     GameObject Player;
     GameObject Man1;
     GameObject Man1Parent;
@@ -23,6 +30,9 @@ public class Man : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        endingInit = false;
+        endingPeople = GameObject.FindGameObjectsWithTag("endingPeople");
+        rend.material = material1;
         Player = GameObject.Find("Player");
         Man1 = GameObject.Find("man1");
         originalPos = new Vector3(26, 0, -5);
@@ -32,7 +42,7 @@ public class Man : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
         if (currentSceneName == "L2") {
-            L2SceneActiveFlag = true;
+            L2SceneActiveFlag = true; 
         }
 
     }
@@ -41,6 +51,26 @@ public class Man : MonoBehaviour
     void Update()
     {
 
+        // change man color for explosion over time
+        float lerp = Mathf.PingPong(Time.time, duration) / duration;
+        rend.material.Lerp(material1, material2, lerp);
+
+        if (Time.timeSinceLevelLoad > spawnEndingThingsCounter) {
+            foreach (GameObject person in endingPeople) {
+                person.transform.Find("Small Man").gameObject.SetActive(true);
+                // GameObject personChild = person.GetChild(1);
+                person.transform.RotateAround(Player.transform.position, Vector3.up, (Mathf.Lerp(5f, 1000f, 100f) * Time.deltaTime));
+                endingInit = true;
+            }
+        }
+
+        if (endingInit) {
+            foreach (GameObject person in endingPeople) {
+                // person.transform.localScale += (new Vector3(1f, 5f, 1f) * Time.deltaTime);
+                person.transform.localScale = Vector3.Lerp(person.transform.localScale, person.transform.localScale * 1.3f, Time.deltaTime * 2);
+            }
+        }
+
         //Spin man for L2
         if (L2SceneActiveFlag) {
             Man1.transform.Rotate(0, 0, .25f);
@@ -48,8 +78,6 @@ public class Man : MonoBehaviour
 
         distanceFromVoidHome = Vector3.Distance(Man1.transform.position, VoidHome.transform.position);
         playerDistanceFromMan = Vector3.Distance(Man1.transform.position, Player.transform.position);
-
-        Debug.Log(playerDistanceFromMan);
         
         // grab the man if Player is close enough
         if ((Input.GetKeyDown(KeyCode.V)) & (playerDistanceFromMan < 3)) {
@@ -78,12 +106,7 @@ public class Man : MonoBehaviour
         // if not grabbing man / if let go of man
         }
         else if (!manAttached) {
-                // testing
-                
-                //
-
-                // Man1.transform.position = originalPos;
-                // Man1.transform.SetParent(Man1Parent.transform);
+                // nothing
         }
 
         // if man is close enough to VoidHome then end level
