@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class Man : MonoBehaviour
 {
 
+    private float timeBetweenDoingSomething = 5f;  // Wait 5 seconds after we do something to do something again
+    private float timeWhenWeNextDoSomething;  // The next time we do something
     bool endingInit;
     public Material material1;
     public Material material2;
-    float duration = 5.0f;
     public Renderer rend;
-    float spawnEndingThingsCounter = 5f;
     GameObject[] endingPeople;
     GameObject Player;
     GameObject Man1;
@@ -30,6 +30,7 @@ public class Man : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeWhenWeNextDoSomething = Time.time + timeBetweenDoingSomething;
         endingInit = false;
         endingPeople = GameObject.FindGameObjectsWithTag("endingPeople");
         rend.material = material1;
@@ -52,17 +53,8 @@ public class Man : MonoBehaviour
     {
 
         // change man color for explosion over time
-        float lerp = Mathf.PingPong(Time.time, duration) / duration;
-        rend.material.Lerp(material1, material2, lerp);
-
-        if (Time.timeSinceLevelLoad > spawnEndingThingsCounter) {
-            foreach (GameObject person in endingPeople) {
-                person.transform.Find("Small Man").gameObject.SetActive(true);
-                // GameObject personChild = person.GetChild(1);
-                person.transform.RotateAround(Player.transform.position, Vector3.up, (Mathf.Lerp(5f, 1000f, 100f) * Time.deltaTime));
-                endingInit = true;
-            }
-        }
+        // float manColorLerp = Mathf.PingPong(Time.time, durationUntilLevelEnd) / durationUntilLevelEnd;
+        // rend.material.Lerp(material1, material2, manColorLerp);
 
         if (endingInit) {
             foreach (GameObject person in endingPeople) {
@@ -115,7 +107,7 @@ public class Man : MonoBehaviour
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
             Void.GetComponent<SpriteRenderer>().enabled = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(EndingCoroutine());
         }
 
         if (InitVoidFlag) {
@@ -125,8 +117,32 @@ public class Man : MonoBehaviour
 
     }
 
+
+    // logic to spin ending guys - currently not in use
+    // void SpinEndingMen() {
+        // foreach (GameObject person in endingPeople) {
+           // person.transform.Find("Small Man").gameObject.SetActive(true);
+           // person.transform.RotateAround(Player.transform.position, Vector3.up, (Mathf.Lerp(5f, 1000f, 100f) * Time.deltaTime));
+           // endingInit = true;
+        // }
+        // if (endingInit) {
+           // foreach (GameObject person in endingPeople) {
+              //  person.transform.localScale = Vector3.Lerp(person.transform.localScale, person.transform.localScale * 1.3f, Time.deltaTime * 2);
+           // }
+       // }
+    // }
+
+    void LoadNextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     void SpinVoid() {
         Void.transform.Rotate(0f, 0f, 6.0f * voidRotationsPerMinute * Time.deltaTime);
+    }
+
+    IEnumerator EndingCoroutine() {
+        yield return new WaitForSeconds(5);
+        LoadNextScene();
     }
 
 }
