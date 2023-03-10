@@ -9,12 +9,10 @@ public class Windmills : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("hi");
         windmills = GameObject.FindGameObjectsWithTag("windmill");
         foreach(GameObject wm in windmills) {
             Animator wmAnimator = wm.GetComponent<Animator>();
             wmAnimator.speed = 20;
-            Debug.Log(wmAnimator.speed);
         }
     }
 
