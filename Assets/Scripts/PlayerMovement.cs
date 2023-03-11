@@ -30,14 +30,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Use FixedUpdate because Unity like it better for physics
-    void FixedUpdate()
-    
-    {
+    void FixedUpdate() {
+        rb.AddForce(Physics.gravity*rb.mass);
         if (CanMove) {
             MyInput();
             MovePlayer();
         }
-        
     }
 
     void Update() {
