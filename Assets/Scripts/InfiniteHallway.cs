@@ -8,6 +8,8 @@ public class InfiniteHallway : MonoBehaviour
     GameObject ResetPoint;
     GameObject GoBegin;
     GameObject Player;
+    public GameObject WinterThings;
+    public GameObject SpringThings;
     float distanceFromGoBegin;
     private Vector3 playerVelocity;
     bool teleportedFlag;
@@ -23,8 +25,15 @@ public class InfiniteHallway : MonoBehaviour
     void Update()
     {
         distanceFromGoBegin = Vector3.Distance(Player.transform.position, GoBegin.transform.position);
-        if (distanceFromGoBegin < 1) {
+        if (distanceFromGoBegin < 1.5) {
             playerVelocity = Player.GetComponent<Rigidbody>().velocity;
+            if (WinterThings.activeSelf) {
+                WinterThings.SetActive(false);
+                SpringThings.SetActive(true);
+            } else if (SpringThings.activeSelf) {
+                SpringThings.SetActive(false);
+                WinterThings.SetActive(true);
+            }
             Player.transform.position = ResetPoint.transform.position;
             teleportedFlag = true;
         }
@@ -32,6 +41,6 @@ public class InfiniteHallway : MonoBehaviour
             Player.GetComponent<Rigidbody>().velocity = playerVelocity;
             teleportedFlag= false; 
         }
-        // TODO: mainstain speed - get rid of startup speed??
+
     }
 }
