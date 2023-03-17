@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatDoor : MonoBehaviour
+public class Boat : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    GameObject[] boatDoor;
+
     void Start()
     {
-        
+        boatDoor = GameObject.FindGameObjectsWithTag("BoatDoor");
+        foreach(GameObject piece in boatDoor) {
+            piece.GetComponent<MeshRenderer>().enabled = false;
+            if (piece.GetComponent<BoxCollider>()) {
+                piece.GetComponent<BoxCollider>().enabled = false;
+            }
+            if (piece.GetComponent<MeshCollider>()) {
+                piece.GetComponent<MeshCollider>().enabled = false;
+            }
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
