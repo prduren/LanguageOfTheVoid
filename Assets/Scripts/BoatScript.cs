@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatScript : MonoBehaviour
 {
@@ -21,10 +22,12 @@ public class BoatScript : MonoBehaviour
     GameObject BoatSpawn;
     GameObject BoatEndPoint;
     public bool enteredBoat;
-
+    string currentActiveScene;
 
     void Start()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string currentActiveScene = currentScene.name;
 
         // set init position to the first waypoint
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
@@ -40,7 +43,9 @@ public class BoatScript : MonoBehaviour
         boatDoor = GameObject.FindGameObjectsWithTag("BoatDoor");
         BlueManFlag = GameObject.Find("BlueManFlag");
         Player = GameObject.Find("Player");
-        BlueMan = GameObject.FindGameObjectWithTag("blueMan");
+        if (currentActiveScene == "L5") {
+            BlueMan = GameObject.FindGameObjectWithTag("blueMan");
+        }
         BoatSpawn = GameObject.Find("BoatSpawn");
         BoatEndPoint = GameObject.Find("BoatEndPoint");
         
@@ -48,31 +53,32 @@ public class BoatScript : MonoBehaviour
 
     void Update()
     {
-        // if holding blue man and near boat, open boat door
-        distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
-        distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
-        if (distanceFromFlag < 3) {
-            enteredBoat = true;
-        }
-        if (enteredBoat) {
-            Player.transform.position = BoatSpawn.transform.position;
-            foreach(GameObject piece in boatDoor) {
-                piece.GetComponent<MeshRenderer>().enabled = false;
-                if (piece.GetComponent<BoxCollider>()) {
-                    piece.GetComponent<BoxCollider>().enabled = false;
-                }
-                if (piece.GetComponent<MeshCollider>()) {
-                    piece.GetComponent<MeshCollider>().enabled = false;
-                }
+        if (currentActiveScene == "L5") {
+            // if holding blue man and near boat, open boat door
+            distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
+            distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
+            if (distanceFromFlag < 3) {
+                enteredBoat = true;
             }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold) {
-                currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-                transform.LookAt(currentWaypoint);
-            }
-            Debug.Log(distanceFromBoatEndPoint);
-            if (distanceFromBoatEndPoint < 5) {
-                enteredBoat = false;
+            if (enteredBoat) {
+                Player.transform.position = BoatSpawn.transform.position;
+                foreach(GameObject piece in boatDoor) {
+                    piece.GetComponent<MeshRenderer>().enabled = false;
+                    if (piece.GetComponent<BoxCollider>()) {
+                        piece.GetComponent<BoxCollider>().enabled = false;
+                    }
+                    if (piece.GetComponent<MeshCollider>()) {
+                        piece.GetComponent<MeshCollider>().enabled = false;
+                    }
+                }
+                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold) {
+                    currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
+                    transform.LookAt(currentWaypoint);
+                }
+                if (distanceFromBoatEndPoint < 5) {
+                    enteredBoat = false;
+                }
             }
         }
     }
