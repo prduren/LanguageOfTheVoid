@@ -26,9 +26,9 @@ public class Waypoints : MonoBehaviour
         }
         if (currentWaypoint.GetSiblingIndex() < transform.childCount - 1) {
             return transform.GetChild(currentWaypoint.GetSiblingIndex() + 1);
-        }
+        } 
         else {
-            return transform.GetChild(0);
+            return transform.GetChild(5);
         }
     }
 }

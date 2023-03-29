@@ -15,8 +15,11 @@ public class BoatScript : MonoBehaviour
     GameObject[] boatDoor;
     GameObject BlueManFlag;
     float distanceFromFlag;
+    float distanceFromBoatEndPoint;
     GameObject Player;
+    GameObject BlueMan;
     GameObject BoatSpawn;
+    GameObject BoatEndPoint;
     public bool enteredBoat;
 
 
@@ -31,19 +34,23 @@ public class BoatScript : MonoBehaviour
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
         transform.LookAt(currentWaypoint);
 
-        distanceFromFlag = 0;
+        distanceFromFlag = 0f;
+        distanceFromBoatEndPoint = 0f;
         enteredBoat = false;
         boatDoor = GameObject.FindGameObjectsWithTag("BoatDoor");
         BlueManFlag = GameObject.Find("BlueManFlag");
         Player = GameObject.Find("Player");
+        BlueMan = GameObject.FindGameObjectWithTag("blueMan");
         BoatSpawn = GameObject.Find("BoatSpawn");
+        BoatEndPoint = GameObject.Find("BoatEndPoint");
         
     }
 
     void Update()
     {
         // if holding blue man and near boat, open boat door
-        distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, Player.transform.position);
+        distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
+        distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
         if (distanceFromFlag < 3) {
             enteredBoat = true;
         }
@@ -62,6 +69,10 @@ public class BoatScript : MonoBehaviour
             if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold) {
                 currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
                 transform.LookAt(currentWaypoint);
+            }
+            Debug.Log(distanceFromBoatEndPoint);
+            if (distanceFromBoatEndPoint < 5) {
+                enteredBoat = false;
             }
         }
     }
