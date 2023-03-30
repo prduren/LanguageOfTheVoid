@@ -25,7 +25,7 @@ public class BoatScript : MonoBehaviour
     string currentActiveScene;
 
     void Start()
-    {
+    {   
         Scene currentScene = SceneManager.GetActiveScene();
         string currentActiveScene = currentScene.name;
 
