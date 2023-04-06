@@ -60,8 +60,6 @@ public class BoatScript : MonoBehaviour
         if (L5ActiveFlag) {
             // if holding blue man and near boat, open boat door
             distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
-            // TODO: why are we not hitting this Debug? -_-
-            Debug.Log(distanceFromFlag);
             distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
             if (distanceFromFlag < 3) {
                 enteredBoat = true;
