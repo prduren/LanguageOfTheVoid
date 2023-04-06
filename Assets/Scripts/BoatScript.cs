@@ -23,11 +23,13 @@ public class BoatScript : MonoBehaviour
     GameObject BoatEndPoint;
     public bool enteredBoat;
     string currentActiveScene;
+    bool L5ActiveFlag = false;
 
     void Start()
     {   
         Scene currentScene = SceneManager.GetActiveScene();
         string currentActiveScene = currentScene.name;
+        Debug.Log(currentScene.name);
 
         // set init position to the first waypoint
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
@@ -43,8 +45,10 @@ public class BoatScript : MonoBehaviour
         boatDoor = GameObject.FindGameObjectsWithTag("BoatDoor");
         BlueManFlag = GameObject.Find("BlueManFlag");
         Player = GameObject.Find("Player");
+        Debug.Log(currentActiveScene);
         if (currentActiveScene == "L5") {
             BlueMan = GameObject.FindGameObjectWithTag("blueMan");
+            L5ActiveFlag = true;
         }
         BoatSpawn = GameObject.Find("BoatSpawn");
         BoatEndPoint = GameObject.Find("BoatEndPoint");
@@ -52,10 +56,12 @@ public class BoatScript : MonoBehaviour
     }
 
     void Update()
-    {
-        if (currentActiveScene == "L5") {
+    {         
+        if (L5ActiveFlag) {
             // if holding blue man and near boat, open boat door
             distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
+            // TODO: why are we not hitting this Debug? -_-
+            Debug.Log(distanceFromFlag);
             distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
             if (distanceFromFlag < 3) {
                 enteredBoat = true;

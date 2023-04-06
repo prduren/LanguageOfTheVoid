@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 55255328}
   m_Layer: 0
   m_Name: VoidPeopleHome (1)
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -698,8 +698,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55255327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39, y: 0, z: 42.57}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.521, y: 0.14, z: -0.6800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -712,8 +712,8 @@ Transform:
   - {fileID: 2071796406}
   - {fileID: 1339815996}
   - {fileID: 1288206531}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &55761386 stripped
 Transform:
@@ -2711,7 +2711,7 @@ GameObject:
   - component: {fileID: 216032387}
   m_Layer: 0
   m_Name: VoidPeopleHome (3)
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2724,7 +2724,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216032386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.39, y: 0, z: 38.15}
+  m_LocalPosition: {x: 19.521, y: 0.14, z: -5.0999985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2737,8 +2737,8 @@ Transform:
   - {fileID: 61267866}
   - {fileID: 1749761274}
   - {fileID: 1481491729}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &219176730
 PrefabInstance:
@@ -4385,7 +4385,7 @@ Transform:
   - {fileID: 2077412378}
   - {fileID: 473424324}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &348040328 stripped
 Transform:
@@ -5666,16 +5666,9 @@ Transform:
   m_LocalPosition: {x: 9.131, y: 0.14, z: -43.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1946400632}
-  - {fileID: 55255328}
-  - {fileID: 750489076}
-  - {fileID: 216032387}
-  - {fileID: 1622833867}
-  - {fileID: 1473542223}
-  - {fileID: 1417646225}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &415785244
 PrefabInstance:
@@ -10457,7 +10450,7 @@ GameObject:
   - component: {fileID: 750489076}
   m_Layer: 0
   m_Name: VoidPeopleHome (2)
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10470,7 +10463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750489075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.39000034, y: 0, z: 42.57}
+  m_LocalPosition: {x: 9.521, y: 0.14, z: -0.6800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10483,8 +10476,8 @@ Transform:
   - {fileID: 1630979820}
   - {fileID: 416924813}
   - {fileID: 1460780374}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &759656758 stripped
 Transform:
@@ -11059,7 +11052,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &802968108
 PrefabInstance:
@@ -16909,7 +16902,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7699f1eff8e36f24cb3f7655d247f64b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87638c8315b76ae4ba2730119be556ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16927,14 +16920,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166059156}
-  m_LocalRotation: {x: -0, y: 0.72283494, z: -0, w: 0.69102085}
-  m_LocalPosition: {x: 6.104, y: 0.95, z: -40.719}
+  m_LocalRotation: {x: -0, y: 0.046466228, z: -0, w: 0.9989199}
+  m_LocalPosition: {x: -42.95, y: 0.95, z: -65.04}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 92.578, z: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 5.327, z: 0}
 --- !u!4 &1168230946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
@@ -19888,7 +19881,7 @@ GameObject:
   - component: {fileID: 1417646225}
   m_Layer: 0
   m_Name: VoidPeopleHome - Dog
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19900,8 +19893,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417646224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.7, y: 0, z: 87.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.831, y: 0.14, z: 43.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19913,8 +19906,8 @@ Transform:
   - {fileID: 1575993980}
   - {fileID: 1389882348}
   - {fileID: 1822319171}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1423905492
 PrefabInstance:
@@ -20952,7 +20945,7 @@ GameObject:
   - component: {fileID: 1473542223}
   m_Layer: 0
   m_Name: VoidPeopleHome - ModernHome
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20965,7 +20958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473542222}
   m_LocalRotation: {x: -0, y: 0.99986273, z: -0, w: -0.016569585}
-  m_LocalPosition: {x: 73.41, y: 0, z: 5.77}
+  m_LocalPosition: {x: 82.541, y: 0.14, z: -37.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20978,8 +20971,8 @@ Transform:
   - {fileID: 1406615775}
   - {fileID: 1221254011}
   - {fileID: 128174432}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 181.899, z: 0}
 --- !u!1 &1473859442
 GameObject:
@@ -22178,7 +22171,7 @@ Transform:
   - {fileID: 993635177}
   - {fileID: 980230305}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1558364178
 PrefabInstance:
@@ -22957,7 +22950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622833866}
   m_LocalRotation: {x: -0, y: 0.99986273, z: -0, w: -0.016569585}
-  m_LocalPosition: {x: -21.45, y: 0, z: 0.75}
+  m_LocalPosition: {x: -12.319001, y: 0.14, z: -42.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22970,8 +22963,8 @@ Transform:
   - {fileID: 500946583}
   - {fileID: 707860552}
   - {fileID: 500578130}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 181.899, z: 0}
 --- !u!4 &1623233833 stripped
 Transform:
@@ -24219,7 +24212,7 @@ Transform:
   - {fileID: 379872358}
   - {fileID: 2008677700}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1703646091
 PrefabInstance:
@@ -26423,7 +26416,7 @@ Transform:
   - {fileID: 1052734777}
   - {fileID: 767273316}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883790504
 GameObject:
@@ -27031,7 +27024,7 @@ GameObject:
   - component: {fileID: 1946400632}
   m_Layer: 0
   m_Name: VoidPeopleHome
-  m_TagString: Untagged
+  m_TagString: voidPeopleHomes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27043,8 +27036,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946400631}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.131, y: 0.14, z: -43.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27056,8 +27049,8 @@ Transform:
   - {fileID: 2034041565}
   - {fileID: 2102963796}
   - {fileID: 656078796}
-  m_Father: {fileID: 410137153}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1946944656
 PrefabInstance:

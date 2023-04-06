@@ -13,13 +13,17 @@ public class Man : MonoBehaviour
     public Material material2;
     public Renderer rend;
     GameObject[] endingPeople;
+    GameObject[] voidPeopleHomes;
     GameObject Player;
     GameObject Man1;
     GameObject Man1Parent;
     GameObject VoidHome;
     GameObject Void;
     Vector3 originalPos;
+    Vector3 PlayerInitPos;
+    Vector3 Man1ParentInitPos;
     float distanceFromVoidHome;
+    float distanceFromWrongVoidHome;
     float playerDistanceFromMan;
     bool manAttached = false;
     float voidRotationsPerMinute = 200.0f;
@@ -33,17 +37,23 @@ public class Man : MonoBehaviour
         timeWhenWeNextDoSomething = Time.time + timeBetweenDoingSomething;
         endingInit = false;
         endingPeople = GameObject.FindGameObjectsWithTag("endingPeople");
+        voidPeopleHomes = GameObject.FindGameObjectsWithTag("voidPeopleHomes");
         rend.material = material1;
         Player = GameObject.Find("Player");
+        PlayerInitPos = Player.transform.position;
         Man1 = GameObject.Find("man1");
         originalPos = new Vector3(26, 0, -5);
         Man1Parent = GameObject.Find("man1Parent");
+        Man1ParentInitPos = Man1Parent.transform.position;
         VoidHome = GameObject.Find("VoidHome");
         Void = GameObject.Find("void");
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
         if (currentSceneName == "L2") {
             L2SceneActiveFlag = true; 
+        }
+        foreach (GameObject person in endingPeople) {
+
         }
 
     }
@@ -52,11 +62,8 @@ public class Man : MonoBehaviour
     void Update()
     {
 
-        // change man color for explosion over time
-        // float manColorLerp = Mathf.PingPong(Time.time, durationUntilLevelEnd) / durationUntilLevelEnd;
-        // rend.material.Lerp(material1, material2, manColorLerp);
-
         if (endingInit) {
+            SpinEndingMen();
             foreach (GameObject person in endingPeople) {
                 // person.transform.localScale += (new Vector3(1f, 5f, 1f) * Time.deltaTime);
                 person.transform.localScale = Vector3.Lerp(person.transform.localScale, person.transform.localScale * 1.3f, Time.deltaTime * 2);
@@ -101,13 +108,23 @@ public class Man : MonoBehaviour
                 // nothing
         }
 
-        // if man is close enough to VoidHome then end level
+        // if man is close enough to correct void home then end level
         if (distanceFromVoidHome < 3) {
             InitVoidFlag = true;
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
             Void.GetComponent<SpriteRenderer>().enabled = true;
             StartCoroutine(EndingCoroutine());
+        }
+
+        // loop all void homes, 
+        // TODO: apply to all levels (add tags to void homes)
+        foreach (GameObject home in voidPeopleHomes) {
+            distanceFromWrongVoidHome = Vector3.Distance(Man1.transform.position, home.transform.GetChild(0).position);
+            if (distanceFromWrongVoidHome < 3) {
+                endingInit = true;
+                StartCoroutine(BadEndingCoroutine());
+            }
         }
 
         if (InitVoidFlag) {
@@ -118,19 +135,17 @@ public class Man : MonoBehaviour
     }
 
 
-    // logic to spin ending guys - currently not in use
-    // void SpinEndingMen() {
-        // foreach (GameObject person in endingPeople) {
-           // person.transform.Find("Small Man").gameObject.SetActive(true);
-           // person.transform.RotateAround(Player.transform.position, Vector3.up, (Mathf.Lerp(5f, 1000f, 100f) * Time.deltaTime));
-           // endingInit = true;
-        // }
-        // if (endingInit) {
-           // foreach (GameObject person in endingPeople) {
-              //  person.transform.localScale = Vector3.Lerp(person.transform.localScale, person.transform.localScale * 1.3f, Time.deltaTime * 2);
-           // }
-       // }
-    // }
+    void SpinEndingMen() {
+        foreach (GameObject person in endingPeople) {
+           person.transform.Find("Small Man").gameObject.SetActive(true);
+           person.transform.RotateAround(Player.transform.position, Vector3.up, (Mathf.Lerp(5f, 1000f, 100f) * Time.deltaTime));
+        }
+        if (endingInit) {
+           foreach (GameObject person in endingPeople) {
+              person.transform.localScale = Vector3.Lerp(person.transform.localScale, person.transform.localScale * 1.3f, Time.deltaTime * 2);
+           }
+       }
+    }
 
     void LoadNextScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -143,6 +158,15 @@ public class Man : MonoBehaviour
     IEnumerator EndingCoroutine() {
         yield return new WaitForSeconds(5);
         LoadNextScene();
+    }
+
+    IEnumerator BadEndingCoroutine() {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Player.transform.position = PlayerInitPos;
+        // manAttached = false;
+        // Man1Parent.transform.position = Man1ParentInitPos;
+        // Man1Parent.transform.SetParent(null);
     }
 
 }
