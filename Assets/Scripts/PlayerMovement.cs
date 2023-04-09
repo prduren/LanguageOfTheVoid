@@ -16,8 +16,6 @@ public class PlayerMovement : MonoBehaviour
     public bool CanMove = false;
 
     void Start () {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
         rb.freezeRotation = true;
         rb = GetComponent<Rigidbody>();
         YesWatched = GameObject.Find("YesWatched");

@@ -14,9 +14,7 @@ public class MouseMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // lock cursor to center of screen
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
+     
     }
 
     // Update is called once per frame

@@ -24,7 +24,6 @@ public class Map : MonoBehaviour
         mapUI.SetActive(false);
         Time.timeScale = 1f;
         MapIsOpen = false;
-        Cursor.visible = false;
     }
 
     void OpenMap() {
