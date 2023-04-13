@@ -109,7 +109,7 @@ public class Man : MonoBehaviour
         }
 
         // if man is close enough to correct void home then end level
-        if (distanceFromVoidHome < 3 && Input.GetMouseButtonDown(0)) {
+        if (distanceFromVoidHome < 6 && Input.GetMouseButtonDown(0)) {
             InitVoidFlag = true;
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
@@ -121,7 +121,7 @@ public class Man : MonoBehaviour
         // TODO: apply to all levels (add tags to void homes)
         foreach (GameObject home in voidPeopleHomes) {
             distanceFromWrongVoidHome = Vector3.Distance(Man1.transform.position, home.transform.GetChild(0).position);
-            if (distanceFromWrongVoidHome < 3 && Input.GetMouseButtonDown(0)) {
+            if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0)) {
                 endingInit = true;
                 StartCoroutine(BadEndingCoroutine());
             }
