@@ -9,16 +9,19 @@ public class SelectionManager : MonoBehaviour
 
     GameObject Note;
     GameObject Diagram;
+    GameObject EndNote;
     GameObject Player;
     public static bool NoteIsOpen = false;
     public GameObject noteUI;
     float distanceFromNote;
     float distanceFromDiagram;
+    float distanceFromEndNote;
 
     void Start()
     {
         Note = GameObject.FindGameObjectWithTag("Note");
         Diagram = GameObject.FindGameObjectWithTag("Diagram");
+        EndNote = GameObject.FindGameObjectWithTag("EndNote");
         Player = GameObject.Find("Player");
     }
 
@@ -28,9 +31,9 @@ public class SelectionManager : MonoBehaviour
 
         distanceFromNote = Vector3.Distance(Player.transform.position, Note.transform.position);
         distanceFromDiagram = Vector3.Distance(Player.transform.position, Diagram.transform.position);
+        distanceFromEndNote = Vector3.Distance(Player.transform.position, EndNote.transform.position);
 
 
-        Debug.Log(distanceFromNote);
         if (distanceFromNote < 1 && Input.GetMouseButtonDown(0)) {
             if (NoteIsOpen) {
                     CloseNote();
@@ -40,6 +43,14 @@ public class SelectionManager : MonoBehaviour
         }
         
         if (distanceFromDiagram < 1 && Input.GetMouseButtonDown(0)) {
+            if (NoteIsOpen) {
+                    CloseNote();
+                } else {
+                    OpenNote();
+                }
+        }
+
+        if (distanceFromEndNote < 2 && Input.GetMouseButtonDown(0)) {
             if (NoteIsOpen) {
                     CloseNote();
                 } else {
