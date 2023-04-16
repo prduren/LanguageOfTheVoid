@@ -30,6 +30,14 @@ public class Man : MonoBehaviour
     bool InitVoidFlag = false;
     bool L2SceneActiveFlag = false;
     string currentSceneName;
+    int nextScene;
+    GameObject L9Gravity;
+    GameObject L9GravityRevert;
+    float distanceFromL9Gravity;
+    float distanceFromL9GravityRevert;
+    bool L9Flag;
+    GameObject MansionEntered;
+    float distanceFromMansionEntered;
 
     // Start is called before the first frame update
     void Start()
@@ -49,19 +57,44 @@ public class Man : MonoBehaviour
         Void = GameObject.Find("void");
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
+        nextScene = currentScene.buildIndex + 1;
         if (currentSceneName == "L2") {
             L2SceneActiveFlag = true; 
         }
-        foreach (GameObject person in endingPeople) {
-
+        if (currentSceneName == "L9") {
+            L9Flag = true;
+            L9Gravity = GameObject.Find("L9Gravity");
+            L9GravityRevert = GameObject.Find("L9GravityRevert");
         }
-
+        MansionEntered = GameObject.Find("MansionEntered");
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        distanceFromMansionEntered = Vector3.Distance(Player.transform.position, MansionEntered.transform.position);
+
+        if (distanceFromMansionEntered < 30) {
+            RenderSettings.fogEndDistance = 10;
+        } else {
+            RenderSettings.fogEndDistance = 30;
+        }
+
+        if (L9Flag) {
+            distanceFromL9Gravity = Vector3.Distance(Player.transform.position, L9Gravity.transform.position);
+            distanceFromL9GravityRevert = Vector3.Distance(Player.transform.position, L9GravityRevert.transform.position);
+
+            if (distanceFromL9Gravity < 5) {
+                Physics.gravity = new Vector3(0, -60f, 0);
+            }
+
+            if (distanceFromL9GravityRevert < 5) {
+                Physics.gravity = new Vector3(0, -15f, 0);
+            }
+
+        }
+        
         if (endingInit) {
             SpinEndingMen();
             foreach (GameObject person in endingPeople) {
@@ -114,11 +147,11 @@ public class Man : MonoBehaviour
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
             Void.GetComponent<SpriteRenderer>().enabled = true;
-            StartCoroutine(EndingCoroutine());
+            // StartCoroutine(EndingCoroutine());
+            StartCoroutine(AsynchronousLoad(nextScene));
         }
 
-        // loop all void homes, 
-        // TODO: apply to all levels (add tags to void homes)
+        // loop all void homes
         foreach (GameObject home in voidPeopleHomes) {
             distanceFromWrongVoidHome = Vector3.Distance(Man1.transform.position, home.transform.GetChild(0).position);
             if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0)) {
@@ -167,6 +200,25 @@ public class Man : MonoBehaviour
         // manAttached = false;
         // Man1Parent.transform.position = Man1ParentInitPos;
         // Man1Parent.transform.SetParent(null);
+    }
+
+    IEnumerator AsynchronousLoad (int scene) {
+        yield return null;
+        AsyncOperation ao = SceneManager.LoadSceneAsync(scene);
+        ao.allowSceneActivation = false;
+        while (! ao.isDone) {
+            // TODO: next scene is loading, show loading screen. Don't move to next scene til loading screen is totally done. 
+            // [0, 0.9] > [0, 1]
+            float progress = Mathf.Clamp01(ao.progress / 0.9f);
+            Debug.Log("Loading progress: " + (progress * 100) + "%");
+            // Loading completed
+            if (ao.progress == 0.9f) {
+                Debug.Log("Press a key to start");
+                if (Input.anyKey)
+                    ao.allowSceneActivation = true;
+            }
+            yield return null;
+        }
     }
 
 }

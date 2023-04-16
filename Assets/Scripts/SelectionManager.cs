@@ -16,12 +16,20 @@ public class SelectionManager : MonoBehaviour
     float distanceFromNote;
     float distanceFromDiagram;
     float distanceFromEndNote;
+    string currentSceneName;
+    bool L9Flag;
 
     void Start()
     {
+        L9Flag = false;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string currentSceneName = currentScene.name;
         Note = GameObject.FindGameObjectWithTag("Note");
         Diagram = GameObject.FindGameObjectWithTag("Diagram");
-        EndNote = GameObject.FindGameObjectWithTag("EndNote");
+        if (currentSceneName == "L9") {
+            L9Flag = true;
+            EndNote = GameObject.FindGameObjectWithTag("EndNote");
+        }
         Player = GameObject.Find("Player");
     }
 
@@ -31,8 +39,6 @@ public class SelectionManager : MonoBehaviour
 
         distanceFromNote = Vector3.Distance(Player.transform.position, Note.transform.position);
         distanceFromDiagram = Vector3.Distance(Player.transform.position, Diagram.transform.position);
-        distanceFromEndNote = Vector3.Distance(Player.transform.position, EndNote.transform.position);
-
 
         if (distanceFromNote < 1 && Input.GetMouseButtonDown(0)) {
             if (NoteIsOpen) {
@@ -50,14 +56,19 @@ public class SelectionManager : MonoBehaviour
                 }
         }
 
-        if (distanceFromEndNote < 2 && Input.GetMouseButtonDown(0)) {
-            if (NoteIsOpen) {
+        if (L9Flag) {
+            distanceFromEndNote = Vector3.Distance(Player.transform.position, EndNote.transform.position);
+
+            if (distanceFromEndNote < 2 && Input.GetMouseButtonDown(0)) {
+                if (NoteIsOpen) {
                     CloseNote();
                 } else {
                     OpenNote();
                 }
+            }
         }
 
+        
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // this assumes the mouse is at the center of the screen
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Note") {
