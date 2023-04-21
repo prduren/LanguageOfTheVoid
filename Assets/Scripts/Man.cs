@@ -148,7 +148,9 @@ public class Man : MonoBehaviour
             Man1.transform.localScale = vec;
             Void.GetComponent<SpriteRenderer>().enabled = true;
             // StartCoroutine(EndingCoroutine());
-            StartCoroutine(AsynchronousLoad(nextScene));
+            // StartCoroutine(AsynchronousLoad(nextScene));
+            // use NameFromIndex to pull the name from the next buildIndex scene. wow why is this such an awful workaround
+            Initiate.Fade(NameFromIndex(SceneManager.GetActiveScene().buildIndex + 1), Color.black, 0.5f);
         }
 
         // loop all void homes
@@ -165,6 +167,14 @@ public class Man : MonoBehaviour
         }
 
 
+    }
+
+     private static string NameFromIndex(int BuildIndex) {
+        string path = SceneUtility.GetScenePathByBuildIndex(BuildIndex);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        return name.Substring(0, dot);
     }
 
 
