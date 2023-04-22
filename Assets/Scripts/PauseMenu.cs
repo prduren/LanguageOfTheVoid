@@ -44,14 +44,26 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void LoadMenu() {
-        Debug.Log("Loading menu...");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame() {
-        Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void RestartLevel() {
+        Resume();
+        Initiate.Fade(NameFromIndex(SceneManager.GetActiveScene().buildIndex), Color.black, 0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private static string NameFromIndex(int BuildIndex) {
+        string path = SceneUtility.GetScenePathByBuildIndex(BuildIndex);
+        int slash = path.LastIndexOf('/');
+        string name = path.Substring(slash + 1);
+        int dot = name.LastIndexOf('.');
+        return name.Substring(0, dot);
     }
 
 }
