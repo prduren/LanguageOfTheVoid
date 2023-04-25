@@ -217,7 +217,6 @@ public class Man : MonoBehaviour
         AsyncOperation ao = SceneManager.LoadSceneAsync(scene);
         ao.allowSceneActivation = false;
         while (! ao.isDone) {
-            // TODO: next scene is loading, show loading screen. Don't move to next scene til loading screen is totally done. 
             // [0, 0.9] > [0, 1]
             float progress = Mathf.Clamp01(ao.progress / 0.9f);
             Debug.Log("Loading progress: " + (progress * 100) + "%");
