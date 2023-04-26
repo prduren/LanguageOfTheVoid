@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject optionsUI;
 
     void Start() {
         Cursor.visible = true;
@@ -18,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     {
 
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (GameIsPaused) {
+            if (GameIsPaused || optionsUI.activeSelf) {
                 Resume();
             } else if (!GameIsPaused)  {
                 Pause();
@@ -28,6 +29,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume() {
         pauseMenuUI.SetActive(false);
+        optionsUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
         Cursor.visible = false;
@@ -56,6 +58,16 @@ public class PauseMenu : MonoBehaviour
         Resume();
         Initiate.Fade(NameFromIndex(SceneManager.GetActiveScene().buildIndex), Color.black, 0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Options() {
+        pauseMenuUI.SetActive(false);
+        optionsUI.SetActive(true);
+    }
+
+    public void Back() {
+        pauseMenuUI.SetActive(true);
+        optionsUI.SetActive(false);
     }
 
     private static string NameFromIndex(int BuildIndex) {
