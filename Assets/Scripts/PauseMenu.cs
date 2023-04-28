@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject musicOnImage;
     AudioSource stepsAudioSource;
     AudioSource musicAudioSource;
+    public Sprite onSwitch;
+    public Sprite offSwitch;
 
     void Start() {
         Cursor.visible = true;
@@ -79,20 +81,20 @@ public class PauseMenu : MonoBehaviour
 
     public void StepsActive() {
         if (stepsAudioSource.mute) {
-            stepsOnImage.GetComponent<Image>().color = Color.white;
+            stepsOnImage.GetComponent<Image>().sprite = onSwitch;
             stepsAudioSource.mute = false;
         } else {
-            stepsOnImage.GetComponent<Image>().color = Color.black;
+            stepsOnImage.GetComponent<Image>().sprite = offSwitch;
             stepsAudioSource.mute = true;
         }
     }
 
     public void MusicActive() {
         if (musicAudioSource.mute) {
-            musicOnImage.GetComponent<Image>().color = Color.white;
+            musicOnImage.GetComponent<Image>().sprite = onSwitch;
             musicAudioSource.mute = false;
         } else {
-            musicOnImage.GetComponent<Image>().color = Color.black;
+            musicOnImage.GetComponent<Image>().sprite = offSwitch;
             musicAudioSource.mute = true;
         }
     }
