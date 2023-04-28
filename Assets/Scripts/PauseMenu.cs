@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -8,10 +9,16 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsUI;
+    public GameObject stepsOnImage;
+    public GameObject musicOnImage;
+    AudioSource stepsAudioSource;
+    AudioSource musicAudioSource;
 
     void Start() {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Locked;
+        stepsAudioSource = GameObject.Find("woodStep").GetComponent<AudioSource>();
+        musicAudioSource = GameObject.Find("L2Music").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,6 +75,26 @@ public class PauseMenu : MonoBehaviour
     public void Back() {
         pauseMenuUI.SetActive(true);
         optionsUI.SetActive(false);
+    }
+
+    public void StepsActive() {
+        if (stepsAudioSource.mute) {
+            stepsOnImage.GetComponent<Image>().color = Color.white;
+            stepsAudioSource.mute = false;
+        } else {
+            stepsOnImage.GetComponent<Image>().color = Color.black;
+            stepsAudioSource.mute = true;
+        }
+    }
+
+    public void MusicActive() {
+        if (musicAudioSource.mute) {
+            musicOnImage.GetComponent<Image>().color = Color.white;
+            musicAudioSource.mute = false;
+        } else {
+            musicOnImage.GetComponent<Image>().color = Color.black;
+            musicAudioSource.mute = true;
+        }
     }
 
     private static string NameFromIndex(int BuildIndex) {
