@@ -21,7 +21,7 @@ public class MoveTowards : MonoBehaviour
         string currentSceneName = currentScene.name;
         shojiDoorLeft = GameObject.Find("shoji door left (real)");
         if (currentSceneName == "L1") {
-            LevelMusic = GameObject.Find("L1Music").GetComponent<AudioSource>();
+            LevelMusic = GameObject.Find("L2Music").GetComponent<AudioSource>();
         } else if (currentSceneName == "L2") {
             LevelMusic = GameObject.Find("L2Music").GetComponent<AudioSource>();
         } else if (currentSceneName == "L3") {
