@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsUI;
     public GameObject stepsOnImage;
     public GameObject musicOnImage;
+    public GameObject fullScreenImage;
     AudioSource stepsAudioSource;
     AudioSource musicAudioSource;
     public Sprite onSwitch;
@@ -30,6 +31,13 @@ public class PauseMenu : MonoBehaviour
             musicOnImage.GetComponent<Image>().sprite = onSwitch;
         } else if (ApplicationData.MusicSoundOnImage == false) {
             musicOnImage.GetComponent<Image>().sprite = offSwitch;
+        }
+        if (ApplicationData.FullScreenMode) {
+            Screen.fullScreen = ApplicationData.FullScreenMode;
+            fullScreenImage.GetComponent<Image>().sprite = onSwitch;
+        } else if (!ApplicationData.FullScreenMode) {
+            Screen.fullScreen = ApplicationData.FullScreenMode;
+            fullScreenImage.GetComponent<Image>().sprite = onSwitch;
         }
     }
 
@@ -116,6 +124,19 @@ public class PauseMenu : MonoBehaviour
             ApplicationData.MusicSoundOn = true;
             ApplicationData.MusicSoundOnImage = false;
         }
+    }
+
+    public void ToggleFullScreen() {
+        if (Screen.fullScreen) {
+            fullScreenImage.GetComponent<Image>().sprite = offSwitch;
+            ApplicationData.FullScreenMode = false;
+            Screen.fullScreen = false;
+        } else if (!Screen.fullScreen) {
+            fullScreenImage.GetComponent<Image>().sprite = onSwitch;
+            ApplicationData.FullScreenMode = true;
+            Screen.fullScreen = true;
+        }
+        
     }
 
     private static string NameFromIndex(int BuildIndex) {
