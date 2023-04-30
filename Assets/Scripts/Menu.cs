@@ -1,3 +1,5 @@
+// TODO: toggle full screen (already done in pause menu)
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
