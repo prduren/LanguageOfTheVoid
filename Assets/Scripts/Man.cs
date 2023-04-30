@@ -38,6 +38,8 @@ public class Man : MonoBehaviour
     bool L9Flag;
     GameObject MansionEntered;
     float distanceFromMansionEntered;
+    AudioSource stepsAudioSource;
+    AudioSource musicAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,10 @@ public class Man : MonoBehaviour
             L9GravityRevert = GameObject.Find("L9GravityRevert");
         }
         MansionEntered = GameObject.Find("MansionEntered");
+        stepsAudioSource = GameObject.Find("woodStep").GetComponent<AudioSource>();
+        musicAudioSource = GameObject.Find("L2Music").GetComponent<AudioSource>();
+        stepsAudioSource.mute = ApplicationData.StepsSoundOn;
+        musicAudioSource.mute = ApplicationData.MusicSoundOn;
     }
 
     // Update is called once per frame

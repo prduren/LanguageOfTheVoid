@@ -7,11 +7,14 @@ public class Menu : MonoBehaviour
 {
 
     GameObject[] MenuPeople;
+    GameObject MenuCanvas;
+    public GameObject optionsUI;
 
     // Start is called before the first frame update
     void Start()
     {
         MenuPeople = GameObject.FindGameObjectsWithTag("MenuPeople");
+        MenuCanvas = GameObject.Find("MenuCanvas");
     }
 
     // Update is called once per frame
@@ -24,5 +27,15 @@ public class Menu : MonoBehaviour
 
     public void StartGame() {
         SceneManager.LoadScene("L1");
+    }
+
+    public void OpenOptions() {
+        // enable options, disable menu
+        MenuCanvas.SetActive(false);
+        optionsUI.SetActive(true);
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 }

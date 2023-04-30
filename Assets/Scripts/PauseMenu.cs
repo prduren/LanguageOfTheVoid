@@ -21,6 +21,16 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         stepsAudioSource = GameObject.Find("woodStep").GetComponent<AudioSource>();
         musicAudioSource = GameObject.Find("L2Music").GetComponent<AudioSource>();
+        if (ApplicationData.StepsSoundOnImage == true) {
+            stepsOnImage.GetComponent<Image>().sprite = onSwitch;
+        } else if (ApplicationData.StepsSoundOnImage == false) {
+            stepsOnImage.GetComponent<Image>().sprite = offSwitch;
+        }
+        if (ApplicationData.MusicSoundOnImage == true) {
+            musicOnImage.GetComponent<Image>().sprite = onSwitch;
+        } else if (ApplicationData.MusicSoundOnImage == false) {
+            musicOnImage.GetComponent<Image>().sprite = offSwitch;
+        }
     }
 
     // Update is called once per frame
@@ -83,9 +93,13 @@ public class PauseMenu : MonoBehaviour
         if (stepsAudioSource.mute) {
             stepsOnImage.GetComponent<Image>().sprite = onSwitch;
             stepsAudioSource.mute = false;
+            ApplicationData.StepsSoundOn = false;
+            ApplicationData.StepsSoundOnImage = true;
         } else {
             stepsOnImage.GetComponent<Image>().sprite = offSwitch;
             stepsAudioSource.mute = true;
+            ApplicationData.StepsSoundOn = true;
+            ApplicationData.StepsSoundOnImage = false;
         }
     }
 
@@ -93,9 +107,14 @@ public class PauseMenu : MonoBehaviour
         if (musicAudioSource.mute) {
             musicOnImage.GetComponent<Image>().sprite = onSwitch;
             musicAudioSource.mute = false;
+            ApplicationData.MusicSoundOn = false;
+            ApplicationData.MusicSoundOnImage = true;
+
         } else {
             musicOnImage.GetComponent<Image>().sprite = offSwitch;
             musicAudioSource.mute = true;
+            ApplicationData.MusicSoundOn = true;
+            ApplicationData.MusicSoundOnImage = false;
         }
     }
 
