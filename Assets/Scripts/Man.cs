@@ -40,6 +40,7 @@ public class Man : MonoBehaviour
     float distanceFromMansionEntered;
     AudioSource stepsAudioSource;
     AudioSource musicAudioSource;
+    bool voidHomeFound = false;
 
     // Start is called before the first frame update
     void Start()
@@ -80,11 +81,11 @@ public class Man : MonoBehaviour
     {
 
         distanceFromMansionEntered = Vector3.Distance(Player.transform.position, MansionEntered.transform.position);
-
-        if (distanceFromMansionEntered < 30) {
+        Debug.Log(distanceFromMansionEntered);
+        if (distanceFromMansionEntered < 12) {
             RenderSettings.fogEndDistance = 10;
         } else {
-            RenderSettings.fogEndDistance = 30;
+            RenderSettings.fogEndDistance = 70;
         }
 
         if (L9Flag) {
@@ -149,6 +150,7 @@ public class Man : MonoBehaviour
 
         // if man is close enough to correct void home then end level
         if (distanceFromVoidHome < 6 && Input.GetMouseButtonDown(0)) {
+            voidHomeFound = true;
             InitVoidFlag = true;
             Vector3 vec = new Vector3(0, 0, 0);
             Man1.transform.localScale = vec;
@@ -162,7 +164,7 @@ public class Man : MonoBehaviour
         // loop all void homes
         foreach (GameObject home in voidPeopleHomes) {
             distanceFromWrongVoidHome = Vector3.Distance(Man1.transform.position, home.transform.GetChild(0).position);
-            if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0)) {
+            if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0) && !voidHomeFound) {
                 endingInit = true;
                 StartCoroutine(BadEndingCoroutine());
             }
