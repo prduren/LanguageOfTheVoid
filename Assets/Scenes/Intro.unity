@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2775,7 +2775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887517949}
   m_LocalRotation: {x: -0, y: -0.01507406, z: -0, w: 0.99988645}
-  m_LocalPosition: {x: 475, y: 87, z: -123}
+  m_LocalPosition: {x: 475.66, y: 87, z: -144.81}
   m_LocalScale: {x: 1.3103, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4663,6 +4663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301e3254e9eb74148aa228b9946fec60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionsUI: {fileID: 0}
+  menuUI: {fileID: 0}
+  stepsOnImage: {fileID: 0}
+  musicOnImage: {fileID: 0}
+  fullScreenImage: {fileID: 0}
+  onSwitch: {fileID: 0}
+  offSwitch: {fileID: 0}
 --- !u!1 &1242130625
 GameObject:
   m_ObjectHideFlags: 0

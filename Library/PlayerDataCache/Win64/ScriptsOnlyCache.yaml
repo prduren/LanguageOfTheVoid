@@ -20,6 +20,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - ReturnPreviousLevel
     - SelectionManager
+    - StatueMan
     - Treegen.TreegenTreeGenerator
     - WalkSounds
     - Waypoints
@@ -130,37 +131,19 @@ ScriptsOnlyBuild:
     methodName: LoadMenu
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: MusicActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: StepsActive
+    methodName: QuitGame
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Resume
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: Options
+    methodName: ToggleFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Back
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Options
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: RestartLevel
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: MusicActive
@@ -169,43 +152,22 @@ ScriptsOnlyBuild:
     methodName: StepsActive
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Back
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Back
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: StepsActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: MusicActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
     methodName: Options
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: RestartLevel
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
+    methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
     methodName: Back
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: RestartLevel
+    methodName: ToggleFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: MusicActive
@@ -217,43 +179,22 @@ ScriptsOnlyBuild:
     methodName: Resume
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Options
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: StepsActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Back
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Options
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
     methodName: RestartLevel
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
+    methodName: Options
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
     methodName: StepsActive
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: MusicActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Back
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
+    methodName: RestartLevel
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: MusicActive
@@ -265,46 +206,10 @@ ScriptsOnlyBuild:
     methodName: LoadMenu
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: StepsActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: MusicActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
     methodName: Back
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: StepsActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Options
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: LoadMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: Resume
+    methodName: ToggleFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: StepsActive
@@ -314,9 +219,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: MusicActive
-  - assembly: Assembly-CSharp
-    fullTypeName: PauseMenu
-    methodName: QuitGame
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Options
@@ -331,10 +233,25 @@ ScriptsOnlyBuild:
     methodName: Resume
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
-    methodName: MusicActive
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Back
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: MusicActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Options
@@ -343,7 +260,118 @@ ScriptsOnlyBuild:
     methodName: LoadMenu
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
     methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Options
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Back
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: MusicActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: MusicActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Options
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Back
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Back
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Options
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: MusicActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: MusicActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Back
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: LoadMenu
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Options
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: StepsActive
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: ToggleFullScreen
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: Resume
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseMenu
+    methodName: QuitGame
   sceneClasses:
     Assets/Scenes/DNEZone.unity:
     - Class: 1
@@ -425,7 +453,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -498,7 +526,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7688}
+      Script: {instanceID: 7690}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -593,11 +621,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6302}
     - Class: 114
-      Script: {instanceID: 6380}
-    - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -702,11 +728,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 7558}
-    - Class: 114
-      Script: {instanceID: 90694}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -811,9 +835,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -926,9 +950,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1049,11 +1073,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6912}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7150}
+    - Class: 114
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1178,11 +1204,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6912}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7150}
+    - Class: 114
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1307,11 +1335,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6912}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7150}
+    - Class: 114
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1436,11 +1466,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6912}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7150}
+    - Class: 114
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1559,11 +1591,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7148}
+      Script: {instanceID: 7150}
     - Class: 114
-      Script: {instanceID: 7558}
+      Script: {instanceID: 7560}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1644,7 +1676,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6736}
     - Class: 114
-      Script: {instanceID: 7688}
+      Script: {instanceID: 7690}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2378,6 +2410,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 2b3a6fad00dfa885ae4201c6d66c84eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StatueMan
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
