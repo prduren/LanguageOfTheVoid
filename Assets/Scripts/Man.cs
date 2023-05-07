@@ -41,6 +41,7 @@ public class Man : MonoBehaviour
     AudioSource stepsAudioSource;
     AudioSource musicAudioSource;
     bool voidHomeFound = false;
+    GameObject PauseCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +75,7 @@ public class Man : MonoBehaviour
         musicAudioSource = GameObject.Find("L2Music").GetComponent<AudioSource>();
         stepsAudioSource.mute = ApplicationData.StepsSoundOn;
         musicAudioSource.mute = ApplicationData.MusicSoundOn;
+        PauseCanvas = GameObject.Find("PauseCanvas");
     }
 
     // Update is called once per frame
@@ -149,7 +151,7 @@ public class Man : MonoBehaviour
         }
 
         // if man is close enough to correct void home then end level
-        if (distanceFromVoidHome < 6 && Input.GetMouseButtonDown(0)) {
+        if (distanceFromVoidHome < 6 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
             voidHomeFound = true;
             InitVoidFlag = true;
             Vector3 vec = new Vector3(0, 0, 0);
@@ -164,7 +166,7 @@ public class Man : MonoBehaviour
         // loop all void homes
         foreach (GameObject home in voidPeopleHomes) {
             distanceFromWrongVoidHome = Vector3.Distance(Man1.transform.position, home.transform.GetChild(0).position);
-            if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0) && !voidHomeFound) {
+            if (distanceFromWrongVoidHome < 6 && Input.GetMouseButtonDown(0) && !voidHomeFound && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
                 endingInit = true;
                 StartCoroutine(BadEndingCoroutine());
             }
