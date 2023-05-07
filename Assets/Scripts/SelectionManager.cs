@@ -18,6 +18,7 @@ public class SelectionManager : MonoBehaviour
     float distanceFromEndNote;
     string currentSceneName;
     bool L9Flag;
+    GameObject PauseCanvas;
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class SelectionManager : MonoBehaviour
             EndNote = GameObject.FindGameObjectWithTag("EndNote");
         }
         Player = GameObject.Find("Player");
+        PauseCanvas = GameObject.Find("PauseCanvas");
+
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class SelectionManager : MonoBehaviour
         distanceFromNote = Vector3.Distance(Player.transform.position, Note.transform.position);
         distanceFromDiagram = Vector3.Distance(Player.transform.position, Diagram.transform.position);
 
-        if (distanceFromNote < 1 && Input.GetMouseButtonDown(0)) {
+        if (distanceFromNote < 1 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
             if (NoteIsOpen) {
                     CloseNote();
                 } else {
@@ -48,7 +51,7 @@ public class SelectionManager : MonoBehaviour
                 }
         }
         
-        if (distanceFromDiagram < 1 && Input.GetMouseButtonDown(0)) {
+        if (distanceFromDiagram < 1 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
             if (NoteIsOpen) {
                     CloseNote();
                 } else {
@@ -59,7 +62,7 @@ public class SelectionManager : MonoBehaviour
         if (L9Flag) {
             distanceFromEndNote = Vector3.Distance(Player.transform.position, EndNote.transform.position);
 
-            if (distanceFromEndNote < 2 && Input.GetMouseButtonDown(0)) {
+            if (distanceFromEndNote < 2 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
                 if (NoteIsOpen) {
                     CloseNote();
                 } else {
@@ -74,7 +77,7 @@ public class SelectionManager : MonoBehaviour
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == "Note") {
             //execute note opening logic
             
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
                 if (NoteIsOpen) {
                     CloseNote();
                 } else {
