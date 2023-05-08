@@ -83,7 +83,6 @@ public class Man : MonoBehaviour
     {
 
         distanceFromMansionEntered = Vector3.Distance(Player.transform.position, MansionEntered.transform.position);
-        Debug.Log(distanceFromMansionEntered);
         if (distanceFromMansionEntered < 12) {
             RenderSettings.fogEndDistance = 10;
         } else {
