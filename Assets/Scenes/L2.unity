@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 410552eefdbdce040859c876f6cbbeab, type: 2}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -809,7 +809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359eb8b4b064c2f4985d58c417f5ef94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapUI: {fileID: 77873675}
 --- !u!1 &49607369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,7 +3635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142238561}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.099, y: 0.888, z: -4.017}
+  m_LocalPosition: {x: 20.029, y: 0.888, z: -3.755}
   m_LocalScale: {x: 0.5, y: 1.2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19281,16 +19280,20 @@ PrefabInstance:
       value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1.6950996
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 83.32548
+      value: 87.82
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19298,7 +19301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.0109367
+      value: -5.45
       objectReference: {fileID: 0}
     - target: {fileID: 2920113333559704214, guid: 9872081c39508f74dad4236b9ed72de2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22542,6 +22545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9f19de3e7079b4494ae9c0e7ca1320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   pauseMenuUI: {fileID: 1781869234}
   optionsUI: {fileID: 1606375443}
   stepsOnImage: {fileID: 196940210}
@@ -45809,7 +45813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7293606707072552338, guid: ac4a218b12074f843be34d54bbaa0568, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 124.9
+      value: 122.9
       objectReference: {fileID: 0}
     - target: {fileID: 7293606707072552338, guid: ac4a218b12074f843be34d54bbaa0568, type: 3}
       propertyPath: m_LocalRotation.w
