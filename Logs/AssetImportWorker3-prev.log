@@ -15,7 +15,7 @@ P:/Unity/Projects/project_a
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-60011
+61050
 Successfully changed project path to: P:/Unity/Projects/project_a
 P:/Unity/Projects/project_a
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ P:/Unity/Projects/project_a
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 203.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 96.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.5f1 (40eb3a945986)
 [Subsystems] Discovering subsystems at path P:/Unity/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'P:/Unity/2021.3.5f1/Editor/Data/Managed'
 Mono path[1] = 'P:/Unity/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'P:/Unity/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56720
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: P:/Unity/2021.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: P:/Unity/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.181491 seconds.
+Registered in 0.002662 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 84.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 87.01 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.341 seconds
+- Completed reload, in  0.562 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4341ms)
-		BeginReloadAssembly (3130ms)
+	ReloadAssembly (563ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (746ms)
-			LoadAssemblies (3133ms)
+		EndReloadAssembly (406ms)
+			LoadAssemblies (60ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (428ms)
+			SetupTypeCache (90ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (251ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (247ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (85ms)
+				RefreshPlugins (87ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (117ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (115ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.959513 seconds.
+Registered in 0.003565 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image P:\Unity\Projects\project_a\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image P:\Unity\Projects\project_a\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.921 seconds
+- Completed reload, in  0.841 seconds
 Domain Reload Profiling:
-	ReloadAssembly (4921ms)
-		BeginReloadAssembly (92ms)
+	ReloadAssembly (842ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (4687ms)
-			LoadAssemblies (2849ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (652ms)
+			LoadAssemblies (60ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (670ms)
+			SetupTypeCache (219ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (44ms)
-			SetupLoadedEditorAssemblies (1092ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (300ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (273ms)
-				ProcessInitializeOnLoadMethodAttributes (738ms)
+				ProcessInitializeOnLoadAttributes (194ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3461 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (59.3 KB). Loaded Objects now: 3946.
-Memory consumption went from 152.9 MB to 152.9 MB.
-Total: 3.759600 ms (FindLiveObjects: 0.373900 ms CreateObjectMapping: 0.100900 ms MarkObjects: 3.138700 ms  DeleteObjects: 0.144100 ms)
+Unloading 3462 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (59.3 KB). Loaded Objects now: 3947.
+Memory consumption went from 152.9 MB to 152.8 MB.
+Total: 3.432100 ms (FindLiveObjects: 0.648800 ms CreateObjectMapping: 0.180900 ms MarkObjects: 2.486500 ms  DeleteObjects: 0.114600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,52 +163,256 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 186953.096576 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Woman )/Prefabs/Podium.prefab
-  artifactKey: Guid(e4007466726a1374d9c61c2084e99db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Woman )/Prefabs/Podium.prefab using Guid(e4007466726a1374d9c61c2084e99db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c26e4c2aa957e22a9075e11efbcfa84') in 0.152244 seconds 
+  Time since last request: 3133.358292 seconds.
+  path: Assets/traces/kitchen/laundry_door_spritesheet.png
+  artifactKey: Guid(0fdd6c5b5ec9fe84380625a98072bfa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/kitchen/laundry_door_spritesheet.png using Guid(0fdd6c5b5ec9fe84380625a98072bfa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a436a109bdbcba899c2b3822cc86358') in 0.111331 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Woman )/Prefabs/Small Woman Yellow.prefab
-  artifactKey: Guid(0d75219ab4af01848ace9dd8f7af8936) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Woman )/Prefabs/Small Woman Yellow.prefab using Guid(0d75219ab4af01848ace9dd8f7af8936) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6411beec6c7d683d8b184a30b6039f5') in 0.070793 seconds 
+  Time since last request: 12.945522 seconds.
+  path: Assets/traces/livingroom/x1y1_livingroom.png
+  artifactKey: Guid(95213c1ddf263ae439f89e08e705cc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x1y1_livingroom.png using Guid(95213c1ddf263ae439f89e08e705cc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b945f15d5d0b60b0506f9020390ccbc6') in 0.019986 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.096128 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Models/Podium.fbx
-  artifactKey: Guid(4f8c0ef4b218c794d9e5115465b69235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Models/Podium.fbx using Guid(4f8c0ef4b218c794d9e5115465b69235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34e5b66147df35beee00fe2da66b5b46') in 0.071971 seconds 
+  Time since last request: 0.000021 seconds.
+  path: Assets/traces/livingroom/x2y2_livingroom.png
+  artifactKey: Guid(7a42d220779eeb24a9df4ac0068e7dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x2y2_livingroom.png using Guid(7a42d220779eeb24a9df4ac0068e7dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b4f0f689d5f2a0222f3cacad9342645') in 0.021643 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Models/Small Man.fbx
-  artifactKey: Guid(3548777c5a27c9b4a96803d41d8c96a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Models/Small Man.fbx using Guid(3548777c5a27c9b4a96803d41d8c96a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b094c74e9c08d014ba3f78faa11f8fb') in 0.034012 seconds 
+  Time since last request: 0.000027 seconds.
+  path: Assets/traces/livingroom/x1y3_livingroom.png
+  artifactKey: Guid(95f9e2a7c276e07428c25f919f913cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x1y3_livingroom.png using Guid(95f9e2a7c276e07428c25f919f913cde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db943f6b6559d611a5238b782f0ae8ee') in 0.021419 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.751507 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Podium.prefab
-  artifactKey: Guid(425a512f507f7e84aa6388cecc0df78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Podium.prefab using Guid(425a512f507f7e84aa6388cecc0df78a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '579ff05e506fe07059bbfebfc6e76a46') in 0.017026 seconds 
+  Time since last request: 8.749445 seconds.
+  path: Assets/traces/livingroom/x1y1_livingroom.png
+  artifactKey: Guid(95213c1ddf263ae439f89e08e705cc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x1y1_livingroom.png using Guid(95213c1ddf263ae439f89e08e705cc00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7b65297e348c67431fd2388d91d22cd') in 0.071690 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Orange.prefab
-  artifactKey: Guid(4c4b81cef0208d544a3294c486ec4435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Orange.prefab using Guid(4c4b81cef0208d544a3294c486ec4435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c81cac05d895123e25708902c8476a8') in 0.021445 seconds 
+  Time since last request: 0.000024 seconds.
+  path: Assets/traces/livingroom/x3y2_livingroom.png
+  artifactKey: Guid(495f153346ec36743ad37885cab905e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x3y2_livingroom.png using Guid(495f153346ec36743ad37885cab905e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890d2c565bd4fe381325dce1aeaaed4d') in 0.052410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/traces/livingroom/x2y3_livingroom.png
+  artifactKey: Guid(ee38ea3ceed37f64bb3b30032ea53cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/x2y3_livingroom.png using Guid(ee38ea3ceed37f64bb3b30032ea53cba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2a6cc8b564cea273e4acd987b42b8a1') in 0.045173 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.160198 seconds.
+  path: Assets/traces/livingroom/coatcloset/coatcloset_no_stepstool.png
+  artifactKey: Guid(154cad818c0080e449a9cad04d5b005b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/coatcloset/coatcloset_no_stepstool.png using Guid(154cad818c0080e449a9cad04d5b005b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a4fbd57d4a89ffb374441bec90526f7') in 0.020409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.382705 seconds.
+  path: Assets/traces/livingroom/coatcloset/coatcloset_no_stepstool.png
+  artifactKey: Guid(154cad818c0080e449a9cad04d5b005b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/coatcloset/coatcloset_no_stepstool.png using Guid(154cad818c0080e449a9cad04d5b005b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9f0da707d7d481994bdf4961e418a16') in 0.032673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.014369 seconds.
+  path: Assets/traces/livingroom/record/record_player.png
+  artifactKey: Guid(2d5a4f416b38f844c88d98a18e50e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/record/record_player.png using Guid(2d5a4f416b38f844c88d98a18e50e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b09187e8f2a3b1da592b561ad44cd431') in 0.017758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.978173 seconds.
+  path: Assets/traces/livingroom/record/record_player.png
+  artifactKey: Guid(2d5a4f416b38f844c88d98a18e50e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/record/record_player.png using Guid(2d5a4f416b38f844c88d98a18e50e5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90279b6bdb4e726deba945b9fdcb36d9') in 0.023026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.661806 seconds.
+  path: Assets/traces/livingroom/tv/tv_knob_highlight.png
+  artifactKey: Guid(a66b102e68eec5f48a578f60a7ca1580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/tv/tv_knob_highlight.png using Guid(a66b102e68eec5f48a578f60a7ca1580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63261135a89e1d72bb1361cbf213a46d') in 0.018074 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.901114 seconds.
+  path: Assets/traces/livingroom/tv/tv_knob_highlight.png
+  artifactKey: Guid(a66b102e68eec5f48a578f60a7ca1580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/livingroom/tv/tv_knob_highlight.png using Guid(a66b102e68eec5f48a578f60a7ca1580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c6915755ef0df3d657f2673060b5522') in 0.019389 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.577943 seconds.
+  path: Assets/traces/kitchen/x1y1_kitchen.png
+  artifactKey: Guid(3d1f367100e019b4c8b16b5f05c37991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/kitchen/x1y1_kitchen.png using Guid(3d1f367100e019b4c8b16b5f05c37991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a48c50dc15161be8f9aebd9088fb18da') in 0.030650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/traces/kitchen/x1y3_kitchen.png
+  artifactKey: Guid(cda4c73a99adce54faed3c86f3a8a8b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/kitchen/x1y3_kitchen.png using Guid(cda4c73a99adce54faed3c86f3a8a8b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e31c3c21bf91170c04f9c95770cdd56f') in 0.024147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.758053 seconds.
+  path: Assets/traces/hallway/fuse_off.png
+  artifactKey: Guid(b67275e741e37c44bb51da7a516d49b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/fuse_off.png using Guid(b67275e741e37c44bb51da7a516d49b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b63a0fac1fce011b27f38bdfa8de502') in 0.019387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/traces/hallway/phone_stopper.png
+  artifactKey: Guid(24aecf3dcff40984bb11745bb6b81ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/phone_stopper.png using Guid(24aecf3dcff40984bb11745bb6b81ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8477c2b3612efbaec6c5d03d9146838c') in 0.018386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/traces/hallway/x1y2_e_hall.png
+  artifactKey: Guid(50b23f52317dd7e4f8a016c393822944) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/x1y2_e_hall.png using Guid(50b23f52317dd7e4f8a016c393822944) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '312e2e7a7bedb9009a83f585cac7aeb7') in 0.021557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/traces/hallway/x1y2_s_hall.png
+  artifactKey: Guid(b9e6f833d3b0a374388cf4497a419bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/x1y2_s_hall.png using Guid(b9e6f833d3b0a374388cf4497a419bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a5f3ee7da1c82709b07661a6cb3730') in 0.018731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.739033 seconds.
+  path: Assets/traces/hallway/phone_rotator.png
+  artifactKey: Guid(6ae6f763755b1504f872b6ddef2c4e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/phone_rotator.png using Guid(6ae6f763755b1504f872b6ddef2c4e86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d1508c9edebe6e37560d04095a16a9b') in 0.018521 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Red.prefab
-  artifactKey: Guid(897f6347e49fbc34fb286f8cc7be3b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Red.prefab using Guid(897f6347e49fbc34fb286f8cc7be3b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3108af694df3460e295a6565dd45e447') in 0.022249 seconds 
+  path: Assets/traces/hallway/x1y1_e_hall.png
+  artifactKey: Guid(5db5b8b71d5644c419a306a5afdbc08d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/x1y1_e_hall.png using Guid(5db5b8b71d5644c419a306a5afdbc08d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d0ec298192613bd01c2fedaa84a89d1') in 0.022142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/traces/hallway/x1y2_w_hall.png
+  artifactKey: Guid(0cda15e3a911f194cb451134c6037e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/x1y2_w_hall.png using Guid(0cda15e3a911f194cb451134c6037e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9739a4ac16251eed539b9f81cf7734b7') in 0.021497 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/traces/hallway/x1y1_w_hall.png
+  artifactKey: Guid(4a0ad90fcc8b74f49bc638f13b180868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/hallway/x1y1_w_hall.png using Guid(4a0ad90fcc8b74f49bc638f13b180868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf3043723877439681bd4b06b8f17ddc') in 0.109624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.382934 seconds.
+  path: Assets/traces/bedroom/closet_close_bedroom.png
+  artifactKey: Guid(c50ba9902278c9d4e9131b5ea6afbb56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/closet_close_bedroom.png using Guid(c50ba9902278c9d4e9131b5ea6afbb56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '899481a4b359ae1daf4273f84cd6ed07') in 0.018046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/traces/bedroom/x2y1_bedroom.png
+  artifactKey: Guid(70cdc58849dc3244793d30226698afc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y1_bedroom.png using Guid(70cdc58849dc3244793d30226698afc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8ef5d2b2287df0d790640fc483b379') in 0.017459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/traces/bedroom/x2y1_s_bedroom.png
+  artifactKey: Guid(28921a4f5b5ae914e926e20d5c1fac72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y1_s_bedroom.png using Guid(28921a4f5b5ae914e926e20d5c1fac72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd59f1f6c9211a26cd6970e6b6da8d06e') in 0.018033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/traces/bedroom/x1y2_s_bedroom.png
+  artifactKey: Guid(90a208dffd2572c478557d74ebf7c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x1y2_s_bedroom.png using Guid(90a208dffd2572c478557d74ebf7c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fe6aab966a3e4036a81a496c0fd9b2c') in 0.019322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/traces/bedroom/x2y2_w_bedroom.png
+  artifactKey: Guid(e073fde257f5a8a4f89e118721cbe253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y2_w_bedroom.png using Guid(e073fde257f5a8a4f89e118721cbe253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854e53bf9756fe680fafce07075986a6') in 0.019012 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Purple.prefab
-  artifactKey: Guid(f7cca76bc3817014787a368895c3fc65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Hyper-Casual Stickman Characters ( 5 BodyTypes ) Vol.2/Hyper-Casual Stickman Character ( Small Man )/Prefabs/Small Man Purple.prefab using Guid(f7cca76bc3817014787a368895c3fc65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d59d368df4354213af41c154484cab8') in 0.021005 seconds 
+  path: Assets/traces/bedroom/x1y2_n_bedroom.png
+  artifactKey: Guid(76e73ad07d2c5fc479037bf4fb3c068e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x1y2_n_bedroom.png using Guid(76e73ad07d2c5fc479037bf4fb3c068e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1bf50b66d3962548978aaa174170fca') in 0.019031 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/traces/bedroom/flashlight.png
+  artifactKey: Guid(935196cd642fe3d41aa0387830943667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/flashlight.png using Guid(935196cd642fe3d41aa0387830943667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3625b8de6056b38549673d0e60fadae1') in 0.017078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/traces/bedroom/window_open_bedroom.png
+  artifactKey: Guid(392a6942b8ec11448a260ec4bbbc8c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/window_open_bedroom.png using Guid(392a6942b8ec11448a260ec4bbbc8c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '241fec182d7082341b62d78b0ed53bb8') in 0.017890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/traces/bedroom/x2y1_e_bedroom.png
+  artifactKey: Guid(8569d6e16f372364cb81754c9f2e695b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y1_e_bedroom.png using Guid(8569d6e16f372364cb81754c9f2e695b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db9bafc800accd414daf508ac838a588') in 0.018602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/traces/bedroom/opening_animation_sheet_bedroom.png
+  artifactKey: Guid(a438b2079a90adb4cb099d3446ed3edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/opening_animation_sheet_bedroom.png using Guid(a438b2079a90adb4cb099d3446ed3edf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f662745539b0241fdd812e417161b2d') in 0.021753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.223360 seconds.
+  path: Assets/traces/bedroom/dresser.png
+  artifactKey: Guid(9984fe4a25fed8a48be2276df815923f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/dresser.png using Guid(9984fe4a25fed8a48be2276df815923f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9d37a4dfec3722850413fda9c057aa') in 0.023515 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/traces/bedroom/musicbox_opened_keyless.png
+  artifactKey: Guid(a4a56377fed79ae47b39ca2e5135d54e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/musicbox_opened_keyless.png using Guid(a4a56377fed79ae47b39ca2e5135d54e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12fbd53227cdf6151cdac4fc44e90317') in 0.018469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/traces/bedroom/nightstand.png
+  artifactKey: Guid(36a102de94f21f746931d70ef1fc7c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/nightstand.png using Guid(36a102de94f21f746931d70ef1fc7c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52dfe1a4d1558b80614fb1ece3510040') in 0.019061 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.149892 seconds.
+  path: Assets/traces/bedroom/window_bedroom.png
+  artifactKey: Guid(c97a743f17d3eb346b3778d9696f978f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/window_bedroom.png using Guid(c97a743f17d3eb346b3778d9696f978f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c30b006c8ffbc72a173a1da34b11239c') in 0.017370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/traces/bedroom/x1y1_e_bedroom.png
+  artifactKey: Guid(f4fe28e84e945ef4aa1f5703e9b58787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x1y1_e_bedroom.png using Guid(f4fe28e84e945ef4aa1f5703e9b58787) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '035bb28b2068703368cc6f95893c5b92') in 0.017793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/traces/bedroom/x1y2_s_bedroom.png
+  artifactKey: Guid(90a208dffd2572c478557d74ebf7c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x1y2_s_bedroom.png using Guid(90a208dffd2572c478557d74ebf7c255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8068336bc4cd98a39b6f54cc02654e02') in 0.018910 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/traces/bedroom/x1y1_n_bedroom.png
+  artifactKey: Guid(feeaeb619c1746d47931c4d22ccad4bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x1y1_n_bedroom.png using Guid(feeaeb619c1746d47931c4d22ccad4bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158a791324b6736cab1a2141e29f99a6') in 0.020217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/traces/bedroom/x2y2_n_bedroom.png
+  artifactKey: Guid(fdf5d905dbdadaf48a2bb21ef45de06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y2_n_bedroom.png using Guid(fdf5d905dbdadaf48a2bb21ef45de06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e2bb567a1951e580accd9101c50fde') in 0.018062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/traces/bedroom/x2y1_e_bedroom.png
+  artifactKey: Guid(8569d6e16f372364cb81754c9f2e695b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/traces/bedroom/x2y1_e_bedroom.png using Guid(8569d6e16f372364cb81754c9f2e695b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '905b84c1e4e3bc726c7ccc9cae31f9b4') in 0.017783 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
