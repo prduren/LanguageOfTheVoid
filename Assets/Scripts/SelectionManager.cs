@@ -10,6 +10,7 @@ public class SelectionManager : MonoBehaviour
     GameObject Note;
     GameObject Diagram;
     GameObject EndNote;
+    GameObject CreditNote;
     GameObject Player;
     public static bool NoteIsOpen = false;
     public GameObject noteUI;
@@ -70,7 +71,6 @@ public class SelectionManager : MonoBehaviour
                 }
             }
         }
-
         
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // this assumes the mouse is at the center of the screen
         RaycastHit hit;
