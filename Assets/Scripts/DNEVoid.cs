@@ -33,7 +33,6 @@ public class DNEVoid : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentSceneName);
         distanceFromDNETeleporter = Vector3.Distance(Player.transform.position, DNETeleporter.transform.position);
         if (distanceFromDNETeleporter < 1) {
             if (currentSceneName == "DNEZone") {
