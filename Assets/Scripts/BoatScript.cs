@@ -61,7 +61,7 @@ public class BoatScript : MonoBehaviour
             // if holding blue man and near boat, open boat door
             distanceFromFlag = Vector3.Distance(BlueManFlag.transform.position, BlueMan.transform.position);
             distanceFromBoatEndPoint = Vector3.Distance(Player.transform.position, BoatEndPoint.transform.position);
-            if (distanceFromFlag < 3) {
+            if (distanceFromFlag < 10) {
                 enteredBoat = true;
             }
             if (enteredBoat) {
