@@ -52,7 +52,7 @@ public class SelectionManager : MonoBehaviour
                 }
         }
         
-        if (distanceFromDiagram < 1 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
+        if (distanceFromDiagram < 2 && Input.GetMouseButtonDown(0) && PauseCanvas.GetComponent<PauseMenu>().GameIsPaused == false) {
             if (NoteIsOpen) {
                     CloseNote();
                 } else {

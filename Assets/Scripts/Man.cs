@@ -97,8 +97,8 @@ public class Man : MonoBehaviour
                 Physics.gravity = new Vector3(0, -60f, 0);
             }
 
-            if (distanceFromL9GravityRevert < 5) {
-                Physics.gravity = new Vector3(0, -15f, 0);
+            if (distanceFromL9GravityRevert < 7) {
+                Physics.gravity = new Vector3(0, -40f, 0);
             }
 
         }
