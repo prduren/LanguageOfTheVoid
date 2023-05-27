@@ -42,6 +42,7 @@ public class Man : MonoBehaviour
     AudioSource musicAudioSource;
     bool voidHomeFound = false;
     GameObject PauseCanvas;
+    GameObject L9ManTowerCollision;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +70,7 @@ public class Man : MonoBehaviour
             L9Flag = true;
             L9Gravity = GameObject.Find("L9Gravity");
             L9GravityRevert = GameObject.Find("L9GravityRevert");
+            L9ManTowerCollision = GameObject.Find("ManTowerCollision");
         }
         MansionEntered = GameObject.Find("MansionEntered");
         stepsAudioSource = GameObject.Find("woodStep").GetComponent<AudioSource>();
@@ -99,6 +101,7 @@ public class Man : MonoBehaviour
 
             if (distanceFromL9GravityRevert < 7) {
                 Physics.gravity = new Vector3(0, -40f, 0);
+                L9ManTowerCollision.GetComponent<SphereCollider>().enabled = true;
             }
 
         }
