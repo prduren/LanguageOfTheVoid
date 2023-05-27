@@ -43,6 +43,7 @@ public class Man : MonoBehaviour
     bool voidHomeFound = false;
     GameObject PauseCanvas;
     GameObject L9ManTowerCollision;
+    GameObject[] L9RevertGravities;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,7 @@ public class Man : MonoBehaviour
             L9Gravity = GameObject.Find("L9Gravity");
             L9GravityRevert = GameObject.Find("L9GravityRevert");
             L9ManTowerCollision = GameObject.Find("ManTowerCollision");
+            L9RevertGravities = GameObject.FindGameObjectsWithTag("L9GravityRevert");
         }
         MansionEntered = GameObject.Find("MansionEntered");
         stepsAudioSource = GameObject.Find("woodStep").GetComponent<AudioSource>();
@@ -99,9 +101,12 @@ public class Man : MonoBehaviour
                 Physics.gravity = new Vector3(0, -60f, 0);
             }
 
-            if (distanceFromL9GravityRevert < 7) {
-                Physics.gravity = new Vector3(0, -40f, 0);
-                L9ManTowerCollision.GetComponent<SphereCollider>().enabled = true;
+            foreach (GameObject L9Revert in L9RevertGravities) {
+                distanceFromL9GravityRevert = Vector3.Distance(Player.transform.position, L9Revert.transform.position);
+                if (distanceFromL9GravityRevert < 7) {
+                    Physics.gravity = new Vector3(0, -40f, 0);
+                    L9ManTowerCollision.GetComponent<SphereCollider>().enabled = true;
+                }
             }
 
         }
@@ -173,6 +178,8 @@ public class Man : MonoBehaviour
                 StartCoroutine(BadEndingCoroutine());
             }
         }
+        
+       
 
         if (InitVoidFlag) {
             SpinVoid();
